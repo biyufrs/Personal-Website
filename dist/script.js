@@ -60,24 +60,20 @@ skillCards.forEach((card) => {
         selectedDetail?.classList.add("show");
     });
 });
-// ==================== CONTACT FORM ====================
 const contactForm = document.querySelector(".form form");
 const nameInput = document.getElementById("name");
 const phoneInput = document.getElementById("num");
 const messageInput = document.getElementById("message");
-// Pastikan semua element ditemukan
 if (contactForm &&
     nameInput &&
     phoneInput &&
     messageInput) {
-    // ==================== LOAD DATA ====================
     nameInput.value =
         localStorage.getItem("contactName") ?? "";
     phoneInput.value =
         localStorage.getItem("contactPhone") ?? "";
     messageInput.value =
         localStorage.getItem("contactMessage") ?? "";
-    // ==================== SAVE DATA ====================
     nameInput.addEventListener("input", () => {
         localStorage.setItem("contactName", nameInput.value);
     });
@@ -87,7 +83,6 @@ if (contactForm &&
     messageInput.addEventListener("input", () => {
         localStorage.setItem("contactMessage", messageInput.value);
     });
-    // ==================== SUBMIT ====================
     contactForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const name = nameInput.value.trim();
